@@ -1,0 +1,23 @@
+{
+  "name": "game-of-life",
+  "version": "1.0.0",
+  "description": "game",
+  "main": "Corpse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Yeranos Gasparyan",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeranos20062022/programming3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yeranos20062022/programming3/issues"
+  },
+  "homepage": "https://github.com/yeranos20062022/programming3#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
