@@ -1,4 +1,6 @@
-class Corpse extends LivingCreature{
+let LivingCreature = require('./LivingCreature')
+
+module.exports = class Corpse extends LivingCreature{
     constructor(x, y) {
         super(x,y)
         this.time = 0
