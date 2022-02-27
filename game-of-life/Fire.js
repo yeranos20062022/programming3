@@ -2,15 +2,20 @@ let LivingCreature = require('./LivingCreature')
 
 module.exports = class Fire extends LivingCreature{
     constructor(x, y) {
-    super(x,y)
-    }        
+        super(x,y)
+        this.time=0
+        }        
     chooseCellnot(c1,c2,c3,c4) {
+        super.getNewCordinates()
         var found = []
         for (var i in this.directions) {
             var x = this.directions[i][0]
             var y = this.directions[i][1]
             if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == c1 || matrix[y][x] == c2 || matrix[y][x] == c3 || matrix[y][x] == c4) {
+                if (matrix[y][x] == c1 || 
+                    matrix[y][x] == c2 || 
+                    matrix[y][x] == c3 || 
+                    matrix[y][x] == c4) {
                     found.push(this.directions[i])
                 }
             }
@@ -19,11 +24,11 @@ module.exports = class Fire extends LivingCreature{
     }
     burn() {
         this.multiply++
-        this.time++        
+        this.time++
         var Cells = this.chooseCellnot(1,2,3,4)
-        if (Cells.length>1 && this.multiply >= 9) {
-            for(var i in Cells){
-                var newCell = Cells[i]
+        if (Cells && this.multiply >= 8) {
+            for(var o in Cells){
+                var newCell = Cells[o]
                 var newX = newCell[0]
                 var newY = newCell[1]                
 
@@ -67,7 +72,7 @@ module.exports = class Fire extends LivingCreature{
 
  
     }
-        if(this.time>=12){
+        if(this.time>=8){
             this.extinguish()
 
         }       
@@ -80,6 +85,6 @@ module.exports = class Fire extends LivingCreature{
                 break;
             }
         }
-    }
+     }
 }
 //կրակ, այրում է ամեն ինչ

@@ -1,6 +1,6 @@
 var socket = io()
 
-var side = 20
+var side = 25
 
 
 function setup() {
@@ -9,7 +9,7 @@ function setup() {
 }
 
 
-function nkarel() {
+function nkarel(matrix) {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 0) {
@@ -47,8 +47,6 @@ function nkarel() {
 }
 
 
-setInterval(
-    function () {
-    socket.on('send matrix', nkarel)
-    },1000
-)
+
+socket.on('send matrix', nkarel)
+

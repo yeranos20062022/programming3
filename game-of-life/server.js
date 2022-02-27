@@ -58,7 +58,7 @@ matrix = generator(20, 200, 10, 10, 3)
 io.sockets.emit('send matrix', matrix)
 
 
-grassArr = [];
+grassArr = []
 grassEaterArr = []
 predatorArr=[]
 corpseArr=[]
@@ -113,10 +113,10 @@ function game() {
     for(var i in fireArr){
         fireArr[i].burn()
     }  
-    io.sockets.emit("send matrix", matrix);
+    io.sockets.emit("send matrix", matrix)
 }
 
-setInterval(game, 1000)
+setInterval(game, 500)
 
 
 io.on('connection', function () {

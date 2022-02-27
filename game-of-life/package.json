@@ -2,17 +2,17 @@
   "name": "game-of-life",
   "version": "1.0.0",
   "description": "game",
-  "main": "Grass.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Yeranos Gasparyan",
-  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yeranos20062022/programming3.git"
   },
+  "author": "Yeranos",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/yeranos20062022/programming3/issues"
   },

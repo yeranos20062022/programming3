@@ -6,10 +6,9 @@ module.exports = class Corpse extends LivingCreature{
         this.time = 0
     }
     humus(){
-        super.multiply++
+        this.multiply++
         this.time++
-        var r = Math.floor(Math.random())
-        var emptyCells = this.chooseCell(0);        
+        var emptyCells = super.chooseCell(0);        
         for(var i in emptyCells){
             if (emptyCells && this.multiply >= 18) {
                 var newX = emptyCells[i][0]
