@@ -5,7 +5,7 @@ module.exports = class Fire extends LivingCreature{
         super(x,y)
         this.time=0
         }        
-    chooseCellnot(c1,c2,c3,c4) {
+    chooseCellnot(c1,c2,c3) {
         super.getNewCordinates()
         var found = []
         for (var i in this.directions) {
@@ -14,8 +14,7 @@ module.exports = class Fire extends LivingCreature{
             if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
                 if (matrix[y][x] == c1 || 
                     matrix[y][x] == c2 || 
-                    matrix[y][x] == c3 || 
-                    matrix[y][x] == c4) {
+                    matrix[y][x] == c3   ){
                     found.push(this.directions[i])
                 }
             }
@@ -25,7 +24,7 @@ module.exports = class Fire extends LivingCreature{
     burn() {
         this.multiply++
         this.time++
-        var Cells = this.chooseCellnot(1,2,3,4)
+        var Cells = this.chooseCellnot(1,2,3)
         if (Cells && this.multiply >= 8) {
             for(var o in Cells){
                 var newCell = Cells[o]

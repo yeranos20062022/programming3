@@ -116,9 +116,22 @@ function game() {
     io.sockets.emit("send matrix", matrix)
 }
 
-setInterval(game, 500)
+var stop_play_clickCount = 0
+function stop_play(evt){
+    stop_play_clickCount++
+    console.log(evt)
+    console.log(stop_play_clickCount)    
+    return stop_play_clickCount
+}
 
+io.sockets.emit('stop_play', stop_play())
+
+if(stop_play_clickCount%2==1){
+    setInterval(game, 500)
+}else{setInterval(game, 10000)
+}
 
 io.on('connection', function () {
 creator(matrix)
 })
+

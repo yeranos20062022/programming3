@@ -8,14 +8,14 @@ module.exports = class Corpse extends LivingCreature{
     humus(){
         this.multiply++
         this.time++
-        var emptyCells = super.chooseCell(0);        
+        var emptyCells = super.chooseCell(0)       
         for(var i in emptyCells){
             if (emptyCells && this.multiply >= 18) {
                 var newX = emptyCells[i][0]
                 var newY = emptyCells[i][1]
                 matrix[newY][newX] = 1
 
-                var newGrass = new Grass(newX, newY, 1);
+                var newGrass = new Grass(newX, newY, 1)
                 grassArr.push(newGrass)
                 this.multiply = 0                
             }

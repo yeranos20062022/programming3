@@ -32,12 +32,12 @@ module.exports = class GrassEater extends LivingCreature{
                 break
             }
         }
-        var r = Math.round(Math.random())
-        if(r>=0.99){
+        var r = Math.random()
+        if(r>=0.8){
             var cor = new Corpse(this.x,this.y,2)
             corpseArr.push(cor)       
             matrix[this.y][this.x] = 4
-        }else if(r<0.99){
+        }else if(r<0.8){
             matrix[this.y][this.x] = 0
         }
     }
