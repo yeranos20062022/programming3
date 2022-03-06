@@ -114,24 +114,21 @@ function game() {
         fireArr[i].burn()
     }  
     io.sockets.emit("send matrix", matrix)
+
 }
 
-var stop_play_clickCount = 0
-function stop_play(evt){
+setInterval(game, 1000)
+
+var stop_play_clickCount
+function stop_play(){
     stop_play_clickCount++
-    console.log(evt)
-    console.log(stop_play_clickCount)    
+    if(stop_play_clickCount%2==0){
+        stop_play_clickCount=0
+    }
     return stop_play_clickCount
-}
-
-io.sockets.emit('stop_play', stop_play())
-
-if(stop_play_clickCount%2==1){
-    setInterval(game, 500)
-}else{setInterval(game, 10000)
+    io.sockets.on('send spcc', stop_play)    
 }
 
 io.on('connection', function () {
 creator(matrix)
 })
-

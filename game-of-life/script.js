@@ -51,12 +51,19 @@ function nkarel(matrix) {
 socket.on('send matrix', nkarel)
 
 var stop_play_clickCount=0
-function stop_play(evt){
-    stop_play_clickCount++
-    //console.log(evt)
-    console.log(stop_play_clickCount%2)    
-    return stop_play_clickCount
+
+
+function stop_play(){
+    socket.on('send spcc')
 }
 
+
+
 var p = document.getElementById("pElement")
-p.addEventListener("click", stop_play)
+p.addEventListener("click", stop_play())
+
+setInterval(
+    function () {
+    socket.on('send matrix', nkarel)
+    },1000
+)
